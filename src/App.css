@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: aquamarine;
+  background-color: rgb(200, 228, 219);
+  
 }
 
 .App-logo {
@@ -40,4 +41,14 @@
 .main{
   width: 1320px;
   background-color: aquamarine;
+  height: 100%;
+}
+.MainBody{
+  padding: 50px;
+}
+
+
+.CardTitle{
+  height: 70px;
+ 
 }
