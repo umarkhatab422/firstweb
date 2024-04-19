@@ -1,0 +1,48 @@
+.img-fluid {
+    padding-bottom: 20px !important;
+  
+  }
+  .footer {
+    padding: 5rem 0 2.5rem 0;
+    background-color: #e4e4e4;
+    text-align: justify;
+  }
+  
+  .footer h3 {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer a {
+    color: #000;
+  }
+  
+  .footer .copyright {
+    margin-bottom: 0px;
+  }
+  
+  .footer .copyright,
+  .footer .credits {
+    font-size: 14px;
+  }
+  
+  .fa {
+    padding: 7px;
+    font-size: 18px;
+    width: 34px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #3a47bc;
+  }
+  .fa-facebook {
+    background: rgba(245, 245, 245, 0);
+    color: #3a47bc;
+}
