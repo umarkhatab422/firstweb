@@ -1,39 +1,40 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import './header.css'
+import React from 'react'
 import weblogo from '..//../assets/img/logo.png';
-export default function Header({ headerinfo, cname, children }) {
-  // let {headerinfo,cname}=props;
-  // console.log(headerinfo,cname)
-  // console.log(props.headerinfo.email)
-  // console.log(props.headerinfo.Phone)
+import { Link } from "react-router-dom";
+export default function header() {
   return (
-    <div className='header'>
-      <Container>
-        <Row>
-
-
-
-
-
-
-          <div className="col-lg-2 mb-4">
-            <img width={120} src={weblogo} />
+    <header id="header" class="fixed-top d-flex align-items-center bg-white">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <Link to="/"><img  class="img-fluid" width={120} src={weblogo} /></Link>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <Link class="nav-link active" aria-current="page" to="/">Home</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" aria-current="page" to="/Pricing">Pricing</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/order_a_device">Order a Device</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/Book-a-Demo">Book a Demo</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/Get-a-Free-Quote">Get a Free Quote</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/Blog">Blog</Link>
+              </li>
+            </ul>
           </div>
-          <div className="col-lg-8 mb-4">
-            <h3>Menu</h3>
-          </div>
-          <div className="col-lg-2 mb-4">
-            <h3>Header</h3>
-          </div>
-        </Row>
-      </Container>
+        </div>
+      </nav>
     </div>
-
-
-
+  </header>
   )
 }
-
-// export dafault Header;
-// export {Header}

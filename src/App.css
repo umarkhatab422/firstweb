@@ -15,7 +15,7 @@
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,7 +24,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -52,3 +52,236 @@
   height: 70px;
  
 }
+.hero-section {
+  /* background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%), url(../img/hero-bg.jpg); */
+  position: relative;
+  /* height: 500px; */
+}
+.hero-section{
+  padding-top: 50px;
+}
+
+
+/* ,
+.hero-section>.container>.row */
+.row{
+  padding-top: 20px;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0rem !important;
+}
+.hero-section
+{
+  height: 80vh;
+  min-height: 559px;  
+
+  padding-top: 140px;
+
+}
+
+/* .hero-section.inner-page {
+  height: 260vh;
+  min-height: 0;
+} */
+
+/* .hero-section.inner-page .hero-text {
+  transform: translateY(-150px);
+  margin-top: -120px;
+} */
+
+@media screen and (max-width: 992px) {
+  .hero-section.inner-page .hero-text {
+    margin-top: 80px;
+  }
+}
+
+.hero-section h1 {
+  font-size: 26px;
+    color: #7ebcb1;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+@media screen and (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 26px;
+    color: #7ebcb1;
+    text-align: center;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hero-section .hero-text-image {
+    margin-top: 4rem;
+  }
+}
+
+.hero-section p {
+  font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  width: 68%;
+  font-weight: 500;
+  color: black;
+}
+
+.hero-section .iphone-wrap {
+  position: relative;
+  text-align: end;
+}
+
+@media screen and (max-width: 992px) {
+  .hero-section .iphone-wrap {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .hero-section .iphone-wrap .phone-2 {
+    position: relative;
+    top: 0;
+    max-width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  /* .hero-section .iphone-wrap .phone-2 {
+    width: 250px;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 100px;
+  } */
+}
+.phone-3{
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.hero-section .iphone-wrap {
+  position: relative;
+}
+
+@media screen and (max-width: 992px) {
+  .hero-section .iphone-wrap {
+    text-align: center;
+  }
+}
+
+/* .hero-section .iphone-wrap .phone-2{
+  position: absolute;
+  top: -50%;
+  overflow: hidden;
+  left: 0;
+  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+} */
+
+@media screen and (max-width: 992px) {
+  .hero-section .iphone-wrap .phone-2
+ {
+    position: relative;
+    top: 0;
+    max-width: 100%;
+  }
+}
+
+.phone-2 {
+  width: 500px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.65);
+  white-space: nowrap;
+  transition: 0.3s;
+  font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #7EBCB1 !important;
+}
+.text-lg-start{
+  padding-top: 70px;
+}
+.img-fluid1{
+  width: 160px;
+}
+.img-fluid2{
+  width: 160px;
+  margin-left: 13px;
+}
+.btn-No-Long{
+  font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  position: relative !important;
+  border-radius: 10px 10px 10px 10px !important;
+  overflow: hidden !important;
+  border-width: 2px !important;
+  border-color: #7ebcb1 !important;
+  height: 46px !important;
+  padding-top: 11px !important;
+  padding-bottom: 8px !important;
+  width: 176px;
+  /* transform: translateX(0px) translateY(+23px) !important; */
+}
+.btn-Get-started{
+  font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  position: relative !important;
+  border-radius: 10px 10px 10px 10px !important;
+  overflow: hidden !important;
+  border-width: 2px !important;
+  border-color: #7ebcb1 !important;
+  height: 46px !important;
+  padding-top: 11px !important;
+  padding-bottom: 8px !important;
+  width: 394px !important;
+  /* transform: translateX(0px) translateY(+23px) !important; */
+}
+
+
+
+
+
+
+
+
+
