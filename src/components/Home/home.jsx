@@ -17,7 +17,7 @@ export default function home() {
           <h1 data-aos="fade-right">Your Electronic Transport Manager</h1>
           <p>TecHGV is a multi-language application designed to<br />ensure your fleet stays compliant.</p>
           <div className="row justify-content-md-normal">
-            <div className="col col-lg-4">
+            <div className="col col-lg-6">
               <Link to="/"><img  className="img-fluid1" width={120} src={DownloadButton} /></Link>
             </div>
             <div class="col col-lg-6">
@@ -26,11 +26,11 @@ export default function home() {
           </div>
           <div className="row justify-content-md-normal">
             <div className="col col-lg-12">
-            <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><Link to="/" className="btn btn-outline-white btn-Get-started">LOGIN</Link></p>
+            <p data-aos="fade-right" data-aos-delay="200" ><Link to="/" className="btn btn-outline-white btn-Get-started">LOGIN</Link></p>
             </div>
           </div>
           <div className="row justify-content-md-normal">
-            <div className="col col-lg-4">
+            <div className="col col-lg-6">
             <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><Link to="/" className="btn btn-outline-white btn-No-Long">No Long Contracts</Link></p>
             </div>
             <div class="col col-lg-6">

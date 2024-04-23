@@ -6,7 +6,7 @@ export default function header() {
     <header id="header" class="fixed-top d-flex align-items-center bg-white">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo">
-        <Link to="/"><img  class="img-fluid" width={120} src={weblogo} /></Link>
+        <Link to="/"><img  class="img-fluid" width={110} src={weblogo} /></Link>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
@@ -22,7 +22,7 @@ export default function header() {
                 <Link class="nav-link" to="/order_a_device">Order a Device</Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/Book-a-Demo">Book a Demo</Link>
+                <Link class="nav-link" to="/book_a_demo">Book a Demo</Link>
               </li>
               <li class="nav-item">
                 <Link class="nav-link" to="/Get-a-Free-Quote">Get a Free Quote</Link>
