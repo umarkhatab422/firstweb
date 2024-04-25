@@ -14,7 +14,8 @@ export default function home() {
     <div className="col-12 hero-text-image">
       <div className="row">
         <div className="col-lg-6 text-center text-lg-start">
-          <h1 data-aos="fade-right">Your Electronic Transport Manager</h1>
+          <h1 data-aos="fade-right">Your Electronic Transport Managers
+          </h1>
           <p>TecHGV is a multi-language application designed to<br />ensure your fleet stays compliant.</p>
           <div className="row justify-content-md-normal">
             <div className="col col-lg-6">
