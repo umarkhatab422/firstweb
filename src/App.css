@@ -74,9 +74,9 @@ p {
 .hero-section
 {
   height: 80vh;
-  min-height: 559px;  
+  /* min-height: 559px;  
 
-  padding-top: 140px;
+  padding-top: 140px; */
 
 }
 .OrderDevice
@@ -210,6 +210,18 @@ p {
 .phone-2 {
   width: 500px;
 }
+.Driver-Checks-sec
+.centered-image {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DriverChecksimg{
+  width: 250px;
+
+}
+
 
 .navbar {
   padding: 0;
@@ -241,14 +253,14 @@ p {
   font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
 }
 
-.navbar a i,
-.navbar a:focus i {
+.navbar Link i,
+.navbar Link:focus i {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
 }
 
-.navbar a:hover,
+.navbar Link:hover,
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
@@ -309,7 +321,263 @@ p {
 
 
 
+#header {
+  height: 115px;
+  transition: all 0.5s;
+  z-index: 997;
+  transition: all 0.5s;
+}
+
+#header.header-scrolled {
+  background: rgba(39, 70, 133, 0.8);
+  height: 112px;
+}
+
+#header .logo h1 {
+  font-size: 28px;
+  margin: 0;
+  padding: 4px 0;
+  line-height: 1;
+  font-weight: 500;
+}
+
+#header .logo h1 a,
+#header .logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding-top: 0px;
+  padding-bottom: 10px;
+  margin: 0;
+  /* max-height: 95px; */
+}
 
 
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
 
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
 
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #101c36;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover>a {
+  color: #2d71a1;
+}
+
+.navbar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #e40505;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  /* position: fixed; */
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(27, 49, 94, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile Link,
+.navbar-mobile Link:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #101c36;
+}
+
+.navbar-mobile Link:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+  color: #2d71a1;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul Link {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul Link i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul Link:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover>Link {
+  color: #2d71a1;
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+  display: block;
+}
+
+.Electronic h2 {
+  font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 42px;
+  color: #868686;
+  line-height: 1.1em;
+
+}
+.Electronic {  padding-bottom: 30px;
+}
+.GlobalColor{
+  color: #7ebcb1 !important;
+}
+
+.text-center1{
+  border: solid;
+  border-radius: 147px 147px 147px 147px;
+  overflow: hidden;
+  border-width: 5px;
+  border-color: #7fbcb1;
+  height: 300px;
+  width: 300px !important;
+  padding-top: 79px;
+  text-align: center;
+
+}
+.text-center1 h3 {
+  font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif;
+  color: #333 !important;
+  font-size: 25px;
+}
+.text-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Electronic-row{
+  padding: 30px 0px 30px 0px;
+}
+.Driver-Checks-sec{
+  background-color: #eaedf4;
+  padding: 30px 0px 30px 0px;
+}
+.Driver-Checks-sec p{
+  font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+.OneApp-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

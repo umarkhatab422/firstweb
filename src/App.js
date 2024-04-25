@@ -1,10 +1,12 @@
-import React from 'react'
-import Header from './components/header/header.jsx'
-import Footer from './components/footer/footer.jsx'
-import Home from './components/Home/home.jsx'
-import CSS from './App.css'
+import React from 'react';
+import Header from './components/header/header.jsx';
+import Footer from './components/footer/footer.jsx';
+import Home from './components/Home/home.jsx';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
+import './assets/js/main.js';
+
 // import {  createBrowserRouter,  RouterProvider,  Route, Router,} from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom";
 // import OrderDevice from './components/OrderDevice/order-a-device.jsx'
