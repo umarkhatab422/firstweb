@@ -1,13 +1,7 @@
 {
-    "compilerOptions": {
-      "baseUrl": "src",
-      "paths": {
-        "@components/*": ["components/*"],
-        "@utils/*": ["utils/*"],
-        "@assets/*": ["assets/*"]
-
-      }
-    },
+  "compilerOptions": {
+    "baseUrl": "src",
     "include": ["src"]
-  }
-
+  },
+  "exclude": ["node_modules"]
+}

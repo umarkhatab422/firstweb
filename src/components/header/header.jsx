@@ -1,7 +1,7 @@
 import React from 'react'
 import weblogo from '..//../assets/img/logo.png';
 import { Link } from "react-router-dom";
-export default function header() {
+export default function Header() {
   return (
     <header id="header" class="fixed-top d-flex align-items-center bg-white">
     <div class="container d-flex justify-content-between align-items-center">

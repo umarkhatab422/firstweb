@@ -1,14 +1,14 @@
 import React from 'react';
-import weblogo from '..//../assets/img/logo.png';
-import DvsaLogo from '..//../assets/img/DVSA-EARNED-LOGO-00 (1).webp';
-import  './footer.css';
+import weblogo from 'assets/img/logo.png';
+import DvsaLogo from 'assets/img/DVSA-EARNED-LOGO-00 (1).webp';
+import  'components/Footer/Footer.css';
 import { Link } from "react-router-dom";
-import DownloadButton from '.././/../assets/img/Download-Button-1.png';
-import DownloadButton1 from '.././/../assets/img/Download-Button-1-1.png';
-import XLogo from '.././/../assets/img/x.png';
+import DownloadButton from 'assets/img/Download-Button-1.png';
+import DownloadButton1 from 'assets/img/Download-Button-1-1.png';
+import XLogo from 'assets/img/x.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function Footer() {
+const Footer=()=> {
   return (
      <div>
     <div className='footer'>
@@ -72,3 +72,6 @@ export default function Footer() {
   </div>
   )
 }
+
+
+export default Footer;

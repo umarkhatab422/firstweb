@@ -1,14 +1,12 @@
 import React from 'react'
-import PhoneImg from '.././/../assets/img/main-img-1.png'
-import DownloadButton from '.././/../assets/img/Download-Button-1.png'
-import DownloadButton1 from '.././/../assets/img/Download-Button-1-1.png'
-
+import PhoneImg from 'assets/img/main-img-1.png';
+import DownloadButton from 'assets/img/Download-Button-1.png';
+import DownloadButton1 from 'assets/img/Download-Button-1-1.png';
 import { Link } from "react-router-dom";
-export default function home() {
+const Home=()=> {
   return (
 
 <section class="hero-section" id="hero">
-
 <div className="container">
   <div className="row align-items-center">
     <div className="col-12 hero-text-image">
@@ -51,3 +49,5 @@ export default function home() {
 
   );
 }
+
+export default Home;
