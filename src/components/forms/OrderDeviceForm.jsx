@@ -56,9 +56,9 @@ function VehicleForm() {
       <div className="form-group">
         <label>Select Number of Vehicles:</label>
         <select className="form-control" onChange={onChange}>
-          <option>{vehicleForm?.vehicle_number} Vehicles</option>
-          {Array.from({ length: 10 }, (_, index) => index).map((item) => (
-            <option value={item}>{item} Vehicles</option>
+          <option>Vehicles</option>
+          {Array.from({ length: 10 }, (_, index) => index + 1).map((item) => (
+            item > 0 && <option value={item}>{item} Vehicles</option>
           ))}
         </select>
       </div>
