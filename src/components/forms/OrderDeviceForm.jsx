@@ -1,7 +1,12 @@
+import SimpleButton from "components/Buttons/SimpleButton";
 import React, { useEffect, useState } from "react";
 
 function VehicleForm() {
   const [inputVehicleForms, setInputVehicleForms] = useState([]);
+  const [inputFormValue, setInputFormValue] = useState({
+    value: "",
+    isChecked: false,
+  });
   const [vehicleForm, setVehicleForm] = useState({
     company_name: "",
     o_license: "",
@@ -26,26 +31,56 @@ function VehicleForm() {
   const onSelectVehicle = (value) => {
     setVehicleForm({ ...vehicleForm, vehicle_type: value });
   };
-
   const onSelectVehicleNumer = (value) => {
-    console.log(value);
     setVehicleForm({ ...vehicleForm, vehicle_number: value });
   };
-
   const onChangeInputFields = (value, index, type) => {
     if (type === "Multiple") {
-      inputVehicleForms[`Vehicle ${index + 1}`] = value;
-      setInputVehicleForms(inputVehicleForms);
+      setInputVehicleForms((prevState) => {
+        inputVehicleForms[index] = {
+          ...inputVehicleForms[index],
+          value: value,
+          isChecked: false,
+        };
+        return inputVehicleForms;
+      });
     } else {
-      setInputVehicleForms(value);
+      setInputVehicleForms({value:value, isChecked: false });
+    }
+  };
+
+  const onCheckBoxValue = (isChecked, index, type) => {
+    if (type === "Multiple") {
+      setInputVehicleForms((prevState) => {
+        inputVehicleForms[index] = {
+          ...inputVehicleForms[index],
+          value: inputVehicleForms[index]?.value,
+          isChecked: isChecked,
+        };
+        return inputVehicleForms;
+      });
+    } else {
+      setInputVehicleForms({
+        value: inputFormValue?.value,
+        isChecked: isChecked,
+      });
     }
   };
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-
-    if (vehicleForm?.company_name == "") {
-      setInputVehicleForms({ ...inputVehicleForms, isRequired: true });
+    if (
+      vehicleForm?.company_name == "" ||
+      vehicleForm?.address_line == "" ||
+      vehicleForm?.email_address == "" ||
+      vehicleForm?.phone == ""
+    ) {
+      setVehicleForm({ ...vehicleForm, isRequired: true });
+    } else {
+      const data_format = Object.assign({}, vehicleForm, {
+        vehicle_numbers: inputVehicleForms,
+      });
+      console.log(data_format,inputFormValue)
     }
   };
   /////////////////////////////////////////////////////////////////////////////////////////////
@@ -57,14 +92,21 @@ function VehicleForm() {
         <label>Select Number of Vehicles:</label>
         <select className="form-control" onChange={onChange}>
           <option>Vehicles</option>
-          {Array.from({ length: 10 }, (_, index) => index + 1).map((item) => (
-            item > 0 && <option value={item}>{item} Vehicles</option>
-          ))}
+          {Array.from({ length: 10 }, (_, index) => index + 1).map(
+            (item) => item > 0 && <option value={item}>{item} Vehicles</option>
+          )}
         </select>
       </div>
     );
   };
-  const VehicleNumbersofInput = ({ vehicle_number, onChange, values }) => {
+  //////////////////////////////////////////////////////////////////////////////////////////////
+  const VehicleNumbersofInput = ({
+    vehicle_number,
+    onChange,
+    values,
+    isCheck,
+    onChecked,
+  }) => {
     return (
       <div className="form-group">
         {Array.from({ length: vehicle_number }, (_, index) => index + 1).map(
@@ -76,8 +118,13 @@ function VehicleForm() {
                 type="text"
                 className="form-control"
                 placeholder={`Vehicle ${item}`}
-                value={values[item - 1]}
+                value={values[item]?.value}
                 onChange={(val) => onChange(val.target.value, item - 1)}
+              />
+              <input
+                type="checkbox"
+                checked={isCheck[item]?.isChecked}
+                onChange={(val) => onChecked(val?.target?.checked, item - 1)}
               />
             </div>
           )
@@ -85,7 +132,7 @@ function VehicleForm() {
       </div>
     );
   };
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////
 
   return (
     <form>
@@ -94,8 +141,7 @@ function VehicleForm() {
           item !== "vehicle_type" &&
           item !== "form_select" &&
           item !== "vehicle_number" &&
-          item !== "isRequired" &&
-          (
+          item !== "isRequired" && (
             <div className="form-group my-3" key={item}>
               <label htmlFor={item}>
                 {item.replace("_", " ").toUpperCase()}
@@ -103,7 +149,7 @@ function VehicleForm() {
               <input
                 value={vehicleForm[item]}
                 type="text"
-                className="form-control"
+                className="form-control order-deveice-input"
                 id={item}
                 placeholder={`Enter Your ${item
                   .replace("_", " ")
@@ -112,11 +158,18 @@ function VehicleForm() {
                   onHandleChange(e.target.value, item);
                 }}
               />
-              {inputVehicleForms?.isRequired && item == '' && (
-                <p style={{ textAlign: "left", color: "red", fontSize: 10 }}>
-                  This field is required
+              {vehicleForm?.isRequired && vehicleForm[item] == "" ? (
+                <p
+                  style={{
+                    textAlign: "left",
+                    color: "red",
+                    fontSize: 10,
+                    margin: "10px 0px",
+                  }}
+                >
+                  This field is required *
                 </p>
-              )}
+              ) : null}
             </div>
           )
       )}
@@ -139,10 +192,15 @@ function VehicleForm() {
             type="text"
             className="form-control"
             placeholder={`Vehicle Number`}
-            value={inputVehicleForms}
+            value={inputVehicleForms[0]?.value}
             onChange={(value, index) =>
               onChangeInputFields(value.target.value, index)
             }
+          />
+          <input
+            type="checkbox"
+            checked={inputVehicleForms[0]?.isChecked}
+            onChange={(val) => onCheckBoxValue(val.target.checked)}
           />
         </div>
       )}
@@ -157,18 +215,23 @@ function VehicleForm() {
             onChange={(value, index) =>
               onChangeInputFields(value, index, "Multiple")
             }
-            values={inputVehicleForms || ""}
+            isCheck={inputFormValue?.isChecked}
+            onChecked={(value, index) => onCheckBoxValue(value, index,'Multiple')}
+            values={inputFormValue?.value}
           />
         </>
       )}
 
-      <button
-        type="submit"
-        className="btn btn-primary"
-        onClick={(event) => onSubmitForm(event)}
-      >
-        Submit
-      </button>
+      <SimpleButton
+        background={"#7fbcb1"}
+        color={"white"}
+        text={"Submit"}
+        textMargin={0}
+        margin={"20px 0px"}
+        width={"130px"}
+        border={0}
+        onSubmit={(event) => onSubmitForm(event)}
+      />
     </form>
   );
 }

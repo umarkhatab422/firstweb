@@ -3,6 +3,7 @@ import PhoneImg from 'assets/img/main-img-1.png';
 import DownloadButton from 'assets/img/Download-Button-1.png';
 import DownloadButton1 from 'assets/img/Download-Button-1-1.png';
 import { Link } from "react-router-dom";
+import  'pages/Home/Index.css';
 const Home=()=> {
   return (
 
